@@ -2,7 +2,7 @@
 
 
 def completion_percent(done: int, total: int) -> int:
-    """Вычисляет процент выполненных задач."""
+    """Вычисляет целочисленный процент выполненных задач."""
     if total <= 0:
         raise ValueError("Общее число задач должно быть больше нуля")
     if not 0 <= done <= total:
