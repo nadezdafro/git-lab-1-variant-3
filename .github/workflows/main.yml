@@ -7,9 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
       - name: Check project files
-        run: |
-          test -f README.md
-          test -f project.txt
-          test -f tasks.txt
-          test -f team.txt
+        run: test -f README.md
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
