@@ -14,3 +14,10 @@ jobs:
         run: test -f README.md
       - name: Run unit tests
         run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Generate documentation
+        run: python scripts/generate_docs.py
+      - name: Upload documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-documentation
+          path: generated_docs/
