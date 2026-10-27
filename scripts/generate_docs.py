@@ -4,7 +4,7 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parent.parent
 module = ast.parse((root / "app.py").read_text(encoding="utf-8"))
-version = (root / "VERSION").read_text(encoding="utf-8").strip()
+version = (root / "VERSION.txt").read_text(encoding="utf-8").strip()
 lines = ["# Документация учебного проекта", "", f"Версия: {version}", ""]
 for item in module.body:
     if isinstance(item, (ast.FunctionDef, ast.AsyncFunctionDef)):
