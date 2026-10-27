@@ -1,4 +1,4 @@
-"""Учебный модуль для контроля выполнения задач проекта"""
+"""Учебный модуль для контроля выполнения задач проекта."""
 
 
 def completion_percent(done: int, total: int) -> int:
@@ -8,3 +8,10 @@ def completion_percent(done: int, total: int) -> int:
     if not 0 <= done <= total:
         raise ValueError("Число выполненных задач некорректно")
     return round(done * 100 / total)
+
+
+def remaining_tasks(done: int, total: int) -> int:
+    """Возвращает число невыполненных задач."""
+    completion_percent(done, total)
+    return total - done
+
